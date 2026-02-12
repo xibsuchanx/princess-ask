@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- Background Music - Plays immediately -->
+    <audio id="bg-music" loop autoplay>
+      <source src="shital.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Name Input Screen -->
+    <div id="name-screen" style="display: none;">
+      <div class="name-box">
+        <h2>Before opening... What's your name? 💌</h2>
+        <input type="text" id="name-input" placeholder="Enter your name" />
+        <button id="submit-name">Open Letter</button>
+      </div>
+    </div>
+
+    <!-- DOB Verification Screen -->
+    <div id="dob-screen" style="display: none;">
+      <div class="dob-box">
+        <h2>When were you born? 🎂</h2>
+        <p style="font-size: 16px; color: #666; margin-bottom: 15px;">Format: MM/DD/YYYY or MM-DD-YYYY</p>
+         <input type="text" id="dob-input" placeholder="" />
+        <button id="submit-dob">Verify 💕</button>
+      </div>
+    </div>
+
+    <!-- Envelope Screen -->
+    <div id="envelope-container">
+      <img src="envelope.png" alt="Envelope" id="envelope" />
+      <p>♡ Letter for S ♡</p>
+    </div>
+
+    <!-- Letter Screen -->
+    <div id="letter-container">
+      <div class="letter-window">
+        
+        <!-- STAGE 1: Special Letter Text (No cat, no buttons) -->
+        <div id="stage1-content">
+          <h1 id="special-letter-title">💌</h1>
+          <p id="special-letter-subtitle" style="font-size: 24px; margin-top: 20px; color: #000000;"></p>
+          <div id="typing-cursor" style="display: inline-block; width: 4px; height: 30px; background-color: #000000; animation: blink 1s infinite; margin-left: 5px;"></div>
+        </div>
+        
+        <!-- STAGE 2: Romantic Messages Slideshow (5 seconds each) -->
+        <div id="stage2-messages" style="display: none;">
+          <div id="message-slideshow">
+            <p id="romantic-message" style="font-size: 26px; color: #ff4d6d; line-height: 1.5; animation: heartbeat 1.3s infinite;"></p>
+            <div id="message-dots" style="margin-top: 30px; display: flex; gap: 10px; justify-content: center;"></div>
+          </div>
+        </div>
+        
+        <!-- STAGE 3: Proposal Content -->
+        <div id="stage3-proposal" style="display: none;">
+          <h1 id="letter-title" style="color: #000000;">Will you be my Girlfriend ???</h1>
+          <img src="cat_heart.gif" class="cat" id="letter-cat" />
+          
+          <div class="buttons" id="letter-buttons">
+            <img src="yes.png" class="btn yes-btn" alt="Yes" />
+            <div class="no-wrapper">
+              <img src="no.png" class="btn no-btn" alt="No" />
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: Are You Sure? Verification -->
+        <div id="stage4-verify" style="display: none;">
+          <h2 style="font-size: 32px; color: #ff4d6d; margin-bottom: 20px;">Are you sure? 🥺</h2>
+          <img src="hello_kitty.gif" class="cat" id="pleading-cat" style="width: 150px;" />
+          <p style="font-size: 20px; margin-top: 20px; margin-bottom: 20px;">Type "yes" to confirm:</p>
+          <input type="text" id="verify-input" placeholder="type yes here..." style="padding: 12px; font-size: 18px; border-radius: 8px; border: 2px solid #ffccd5; font-family: 'Pixelify Sans', sans-serif; text-align: center; width: 200px;" />
+          <button id="verify-yes" style="margin-top: 20px; padding: 12px 30px; font-size: 20px; background-color: #ff9eb5; color: white; border: none; border-radius: 8px; cursor: pointer; font-family: 'Pixelify Sans', sans-serif;">Confirm 💖</button>
+        </div>
+
+        <!-- STAGE 5: I Love You Saumya (10 seconds, bigger, lower) -->
+        <div id="stage5-love" style="display: none;">
+          <h1 id="love-message" style="font-size: 48px; color: #ff4d6d; margin-bottom: 20px; animation: heartbeat 1.3s infinite;">I Love You Saumya</h1>
+          <p id="love-message-long" style="font-size: 24px; color: #ff4d6d; animation: fadeInOut 2s infinite;">💕💕</p>
+          <img src="hello_kitty.gif" style="width: 120px; margin-top: 30px; opacity: 0.8;" />
+        </div>
+
+        <!-- STAGE 6: Final Text -->
+        <div id="stage6-final" style="display: none;">
+          <p id="final-text" class="final-text">
+            <strong>♡ Now give him your hand Saumya! ♡</strong>
+          </p>
+          <img src="cat_dance.gif" class="cat" style="width: 150px; margin-top: 20px;" />
+        </div>
+
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
